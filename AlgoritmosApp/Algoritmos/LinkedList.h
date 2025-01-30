@@ -6,8 +6,9 @@ class LinkedList
 private:
 	Node* head;
 public:
-	void InsereNoFinal(int valor);
 	LinkedList() { head = nullptr; }
+	void InsereNoFinal(int valor);
 	void ImprimeLista();
+	void DeletaValor(int valor);
 };
 
