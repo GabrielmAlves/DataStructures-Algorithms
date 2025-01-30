@@ -12,6 +12,5 @@ public:
 	std::vector<int> vetor;
 	int PesquisaBinaria(const std::vector<int> vetorOrdenado, int chute);
 	void PegaNumero();
-	//std::vector<int> GeraVetor(std::vector<int> vet);
 };
 

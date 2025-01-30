@@ -53,9 +53,3 @@ void BinarySearch::PegaNumero() {
 		std::cout << "\n\nO indice do numero " << this->numero << " eh: " << this->posicao;
 	}
 }
-
-int main() {
-	BinarySearch bs;
-
-	bs.PegaNumero();
-}
