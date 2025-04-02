@@ -14,9 +14,9 @@ int main() {
     list.ImprimeLista();*/
 
     std::shared_ptr<QuickSort> quickSort = std::make_shared<QuickSort>();
-    std::vector<int> vector = { 8,4,5,9 };
-    
-    quickSort->quickSort(vector, 0, vector.size() - 1);
+    std::vector<int> vetor = { 3,4,5,9 };
+ 
+    quickSort->quickSort(vetor, 0, vetor.size() - 1, quickSort);
 
     return 0;
 }
