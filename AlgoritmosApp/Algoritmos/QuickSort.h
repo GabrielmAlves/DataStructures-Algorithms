@@ -11,6 +11,6 @@ public:
 	std::vector<int> vetorMaior;
 
 	QuickSort() {}
-	int partition(const std::vector<int>& vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr);
-	void quickSort(const std::vector<int>&vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr);
+	int partition(std::vector<int>& vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr);
+	void quickSort(std::vector<int>&vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr);
 };

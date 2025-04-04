@@ -3,27 +3,30 @@
 #include <iostream>
 #include <vector>
 
-int QuickSort::partition(const std::vector<int>& vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr) {
+int QuickSort::partition(std::vector<int>& vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr) {
 
-	int meio = (inicio + fim) / 2;
-	int pivo = vec[meio];
-	for (int i = 0; i < vec.size(); i++) {
-		if (vec[i] < pivo) {
-			ptr->vetorMenor.reserve(10);
-			ptr->vetorMenor.emplace_back(vec[i]);
+	const int meio = (inicio + fim) / 2;
+	ptr->pivot = vec[fim];
+	int i = (inicio - 1);
+
+	for (int j = inicio; j <= fim - 1; j++) {
+
+		if (vec[j] <= pivot) {
+			i++;
+			std::swap(vec[i], vec[j]);
 		}
 	}
 
-	for (const int &i : ptr->vetorMenor) {
-		std::cout << i;
-	}
+	std::swap(vec[i + 1], vec[fim]);
 
-	return 1;
+	return (i+1);
 }
 
 
-void QuickSort::quickSort(const std::vector<int>& vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr) {
+void QuickSort::quickSort(std::vector<int>& vec, const int& inicio, const int& fim, std::shared_ptr<QuickSort> ptr) {
 	if (inicio < fim) {
 		int partitionIndex = partition(vec, inicio, fim, ptr);
+		quickSort(vec, inicio, partitionIndex - 1, ptr);
+		quickSort(vec, partitionIndex + 1, fim, ptr);
 	}
 }

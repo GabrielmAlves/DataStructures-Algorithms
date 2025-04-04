@@ -4,19 +4,14 @@
 #include <vector>
 
 int main() {
-    /*LinkedList list;
-    list.InsereNoFinal(2);
-    list.InsereNoFinal(5);
-    list.InsereNoFinal(8);
-    std::cout << "Lista original: ";
-    list.ImprimeLista();
-    list.DeletaValor(5);
-    list.ImprimeLista();*/
-
-    std::shared_ptr<QuickSort> quickSort = std::make_shared<QuickSort>();
-    std::vector<int> vetor = { 3,4,5,9 };
  
+    std::shared_ptr<QuickSort> quickSort = std::make_shared<QuickSort>();
+    std::vector<int> vetor = { 10, 7, 8, 9, 1, 5 };
+
     quickSort->quickSort(vetor, 0, vetor.size() - 1, quickSort);
 
+    for (const int& i : vetor) {
+        std::cout << i << " ";
+    }
     return 0;
 }
